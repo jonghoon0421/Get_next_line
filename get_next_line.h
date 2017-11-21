@@ -6,7 +6,7 @@
 /*   By: jonkim <jonkim@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 15:40:12 by jonkim            #+#    #+#             */
-/*   Updated: 2017/11/18 18:02:50 by jonkim           ###   ########.fr       */
+/*   Updated: 2017/11/20 19:19:49 by jonkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@
 # include "libft.h"
 
 int	get_next_line(const int fd, char **line);
-int	get_line(int fd, char **data, char **line, int ret);
+int	get_line(int fd, char **data, char **line);
 
 #endif

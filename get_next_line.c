@@ -6,13 +6,13 @@
 /*   By: jonkim <jonkim@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 15:59:59 by jonkim            #+#    #+#             */
-/*   Updated: 2017/11/18 18:02:58 by jonkim           ###   ########.fr       */
+/*   Updated: 2017/11/20 19:19:35 by jonkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		get_line(int fd, char **data, char **line, int ret)
+int		get_line(int fd, char **data, char **line)
 {
 	char	*temp;
 	int		i;
@@ -31,11 +31,8 @@ int		get_line(int fd, char **data, char **line, int ret)
 	}
 	else if (data[fd][i] == '\0')
 	{
-		if (ret == BUFF_SIZE)
-			return (get_next_line(fd, line));
 		*line = ft_strdup(data[fd]);
 		ft_strdel(&data[fd]);
-		data[fd] = NULL;
 	}
 	return (1);
 }
@@ -64,5 +61,5 @@ int		get_next_line(const int fd, char **line)
 		return (-1);
 	else if (ret == 0 && data[fd] == NULL)
 		return (0);
-	return (get_line(fd, data, line, ret));
+	return (get_line(fd, data, line));
 }
